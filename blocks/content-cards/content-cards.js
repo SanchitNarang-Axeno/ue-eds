@@ -111,8 +111,8 @@ export default function decorate(block) {
         arrows: false,
         breakpoints: {
           900: { perPage: 3 },
-          600: { perPage: 2 },
-          0: { perPage: 1 },
+          600: { perPage: 2, padding: { right: '2rem' } },
+          599: { perPage: 1, padding: { right: '2rem' } },
         },
       }).mount();
     });
