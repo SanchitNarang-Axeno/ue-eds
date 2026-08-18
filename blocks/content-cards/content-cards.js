@@ -94,20 +94,44 @@ export default function decorate(block) {
   wrapper.append(splideEl);
   block.replaceChildren(wrapper);
 
-  if (list.children.length > 1) {
+  const slideCount = list.children.length;
+
+  if (slideCount > 1) {
+    const nav = document.createElement('ul');
+    nav.className = 'content-cards-pagination';
+    const dots = [...Array(slideCount)].map((_, i) => {
+      const li = document.createElement('li');
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      li.append(dot);
+      nav.append(li);
+      return dot;
+    });
+    dots[0].classList.add('is-active');
+    wrapper.append(nav);
+
     loadSplide().then((Splide) => {
-      new Splide(splideEl, {
+      const splide = new Splide(splideEl, {
         type: 'loop',
         perPage: 3,
         gap: '1.5rem',
-        pagination: true,
+        pagination: false,
         arrows: false,
         breakpoints: {
           900: { perPage: 3 },
-          600: { perPage: 2, padding: { right: '2rem' , left: '2rem'} },
-          599: { perPage: 1, padding: { right: '2rem' , left: '2rem'} },
+          600: { perPage: 2, padding: { right: '2rem', left: '2rem' } },
+          599: { perPage: 1, padding: { right: '2rem', left: '2rem' } },
         },
       }).mount();
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => splide.go(i));
+      });
+      splide.on('move', (newIndex) => {
+        const realIndex = ((newIndex % slideCount) + slideCount) % slideCount;
+        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === realIndex));
+      });
     });
   }
 }

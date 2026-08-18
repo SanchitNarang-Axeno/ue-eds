@@ -17,6 +17,11 @@
 
 .content-cards .splide__track {
   overflow: hidden;
+  height: 550px;
+
+  @media (width >= 900px) {
+    height: 600px;
+  }
 }
 
 .content-cards .splide__list {
@@ -30,6 +35,8 @@
   display: flex;
   flex-direction: column;
   height: auto;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
 .content-cards .content-cards-card-image {
@@ -84,34 +91,33 @@
   text-decoration: none;
 }
 
-.content-cards .splide__pagination {
-  position: static;
-  margin-top: 24px;
+.content-cards .content-cards-pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
   gap: 8px;
 }
 
-.content-cards .splide__pagination__page {
+.content-cards .content-cards-pagination button {
   width: 8px;
   height: 8px;
+  border: 0;
   border-radius: 50%;
+  padding: 0;
   background-color: #c4c4c4;
-  opacity: 1;
-  margin: 0;
+  cursor: pointer;
 }
 
-.content-cards .splide__pagination__page.is-active {
+.content-cards .content-cards-pagination button.is-active {
   width: 24px;
   border-radius: 4px;
   background-color: #000;
-  transform: none;
 }
 
 @media (width >= 900px) {
   .content-cards .content-cards-heading {
     font-size: 36px;
-  }
-
-  .content-cards .content-cards-card {
-    border-radius: 16px;
   }
 }
