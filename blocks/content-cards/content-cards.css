@@ -1,0 +1,134 @@
+.content-cards {
+  background-color: #ececec;
+  padding: 48px 0;
+}
+
+.content-cards .content-cards-wrapper {
+  max-width: 1264px;
+  margin: 0 auto;
+}
+
+.content-cards .content-cards-heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 24px 32px;
+}
+
+.content-cards .content-cards-track {
+  overflow: hidden;
+}
+
+.content-cards .content-cards-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.content-cards .content-cards-list::-webkit-scrollbar {
+  display: none;
+}
+
+.content-cards .content-cards-card {
+  flex: 0 0 calc(100% - 48px);
+  scroll-snap-align: start;
+  background-color: var(--background-color, #fff);
+  display: flex;
+  flex-direction: column;
+}
+
+.content-cards .content-cards-card-image {
+  line-height: 0;
+}
+
+.content-cards .content-cards-card-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.content-cards .content-cards-card-body {
+  padding: 20px 4px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.content-cards .content-cards-card-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.content-cards .content-cards-card-body p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.content-cards .content-cards-card-body .button-wrapper {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.content-cards .content-cards-card-body .button-wrapper a.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.content-cards .content-cards-card-body .button-wrapper a.button::after {
+  content: '\2192';
+  text-decoration: none;
+}
+
+.content-cards .content-cards-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.content-cards .content-cards-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background-color: #c4c4c4;
+  cursor: pointer;
+}
+
+.content-cards .content-cards-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background-color: #000;
+}
+
+@media (width >= 600px) {
+  .content-cards .content-cards-card {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+@media (width >= 900px) {
+  .content-cards .content-cards-heading {
+    font-size: 36px;
+  }
+
+  .content-cards .content-cards-card {
+    flex: 0 0 calc((100% - 32px) / 3);
+  }
+}

@@ -38,5 +38,11 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "content-cards",
+    "components": [
+      "content-card"
+    ]
   }
 ]
