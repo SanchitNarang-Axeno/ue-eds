@@ -1,29 +1,13 @@
-.content-cards-wrapper{
-  max-width: 1600px !important;
-  padding: 0 !important;
-  margin: unset !important;
-
-}
-
 .content-cards {
   background-color: #ececec;
   padding: 48px 0;
-}
-
-.content-cards .content-cards-wrapper {
-  max-width: 1264px;
-  margin: 0 auto;
 }
 
 .content-cards .content-cards-heading {
   text-align: center;
   font-size: 28px;
   font-weight: 700;
-  margin: 0 24px 32px;
-}
-
-.content-cards .content-cards-splide {
-  padding: 0 24px;
+  margin: 0 0 32px;
 }
 
 .content-cards .splide__track {
@@ -49,12 +33,13 @@
 
 .content-cards .content-cards-card-image img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4/3;
   object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }
 
 .content-cards .content-cards-card-body {
-  padding: 20px 4px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   flex: 1;

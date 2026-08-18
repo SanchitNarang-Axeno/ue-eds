@@ -10,6 +10,11 @@ async function loadSplide() {
   return window.Splide;
 }
 
+function loadBootstrapGrid() {
+  const base = `${window.hlx.codeBasePath}/blocks/content-cards`;
+  loadCSS(`${base}/bootstrap-grid.min.css`);
+}
+
 export default function decorate(block) {
   const firstRow = block.children[0];
   const isHeadingRow = firstRow && !firstRow.querySelector('picture');
@@ -73,8 +78,10 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(optimizedPic);
   });
 
+  loadBootstrapGrid();
+
   const wrapper = document.createElement('div');
-  wrapper.className = 'content-cards-wrapper';
+  wrapper.className = 'content-cards-wrapper container';
 
   if (headingText) {
     const h2 = document.createElement('h2');
