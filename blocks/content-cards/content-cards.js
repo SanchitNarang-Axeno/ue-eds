@@ -104,7 +104,7 @@ export default function decorate(block) {
   if (list.children.length > 1) {
     loadSplide().then((Splide) => {
       new Splide(splideEl, {
-        type: 'slide',
+        type: 'loop',
         perPage: 3,
         gap: '1rem',
         pagination: true,
