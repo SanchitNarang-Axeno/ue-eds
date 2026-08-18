@@ -1,3 +1,10 @@
+.content-cards-wrapper{
+  max-width: 1600px !important;
+  padding: 0 !important;
+  margin: unset !important;
+
+}
+
 .content-cards {
   background-color: #ececec;
   padding: 48px 0;
@@ -15,32 +22,25 @@
   margin: 0 24px 32px;
 }
 
-.content-cards .content-cards-track {
+.content-cards .content-cards-splide {
+  padding: 0 24px;
+}
+
+.content-cards .splide__track {
   overflow: hidden;
 }
 
-.content-cards .content-cards-list {
+.content-cards .splide__list {
   list-style: none;
-  display: flex;
-  gap: 16px;
   margin: 0;
-  padding: 0 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.content-cards .content-cards-list::-webkit-scrollbar {
-  display: none;
+  padding: 0;
 }
 
 .content-cards .content-cards-card {
-  flex: 0 0 calc(100% - 48px);
-  scroll-snap-align: start;
   background-color: var(--background-color, #fff);
   display: flex;
   flex-direction: column;
+  height: auto;
 }
 
 .content-cards .content-cards-card-image {
@@ -94,33 +94,26 @@
   text-decoration: none;
 }
 
-.content-cards .content-cards-nav {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+.content-cards .splide__pagination {
+  position: static;
   margin-top: 24px;
+  gap: 8px;
 }
 
-.content-cards .content-cards-dot {
+.content-cards .splide__pagination__page {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: none;
-  padding: 0;
   background-color: #c4c4c4;
-  cursor: pointer;
+  opacity: 1;
+  margin: 0;
 }
 
-.content-cards .content-cards-dot.active {
+.content-cards .splide__pagination__page.is-active {
   width: 24px;
   border-radius: 4px;
   background-color: #000;
-}
-
-@media (width >= 600px) {
-  .content-cards .content-cards-card {
-    flex: 0 0 calc(50% - 8px);
-  }
+  transform: none;
 }
 
 @media (width >= 900px) {
@@ -129,6 +122,6 @@
   }
 
   .content-cards .content-cards-card {
-    flex: 0 0 calc((100% - 32px) / 3);
+    border-radius: 16px;
   }
 }
