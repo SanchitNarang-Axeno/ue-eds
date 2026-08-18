@@ -3,6 +3,11 @@
   padding: 48px 0;
 }
 
+.content-cards .content-cards-inner {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
 .content-cards .content-cards-heading {
   text-align: center;
   font-size: 28px;
